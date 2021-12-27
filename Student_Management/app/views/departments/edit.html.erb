@@ -1,0 +1,8 @@
+<br />
+<%= form_for @department ,:method => 'patch' do |form| %>
+  <%= form.label :Department %> 
+  <%= form.text_field :name,placeholder: "Department Name" %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
