@@ -12,7 +12,7 @@ class DepartmentsController < ApplicationController
   end
 
   def edit
-    
+    @department = Department.find(params[:id])
   end
 
   def create
