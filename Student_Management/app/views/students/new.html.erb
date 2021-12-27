@@ -1,0 +1,24 @@
+<br />
+<div>
+   <br  />
+   <h>Students Ragistration Form</h>
+   <br />
+   <%= form_for @student do |f| %>
+   <div>
+      <%= f.label :name %> <%= f.text_field :name , placeholder: "Employee Name" %>
+   </div>
+   <div>
+      <%= f.label :age %> <%= f.text_field :age , placeholder: "Age" %>
+   </div>
+   <div>
+      <%= f.label :marks %> <%= f.text_field :marks , placeholder:"Marks" %>
+   </div>
+   <div>
+      <%= f.label :department_id %>
+      <%= f.select :department_id , [['select'], Department.order(:id).ids.map {|i| [Department.find(i).name,i]}].flatten(1) %> 
+   </div>
+   <div>
+      <%= f.submit "Ragister" %>
+   </div>
+   <% end %>
+</div>
