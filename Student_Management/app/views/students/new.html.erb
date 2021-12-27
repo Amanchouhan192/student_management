@@ -4,6 +4,7 @@
    <h>Students Ragistration Form</h><br />
    <%= link_to 'New Department', new_department_path %> |
    <%= link_to("See Student Data ",'/students') %><br />
+
    <%= form_for @student do |f| %>
    <div>
       <% if @student.errors.any? %>
