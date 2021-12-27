@@ -1,5 +1,10 @@
 <br />
 <%= form_for @department do |form| %>
+   <div>
+      <% if @department.errors.any? %>
+      <%= render partial: "shared/error_flash_msg" %>
+      <% end %>
+   </div>
    <%= form.label :name %> 
    <%= form.text_field :name,placeholder: "Department Name" %>
    <%= form.submit %>
