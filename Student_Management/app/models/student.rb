@@ -12,4 +12,12 @@ class Student < ApplicationRecord
          validates_numericality_of :age, :less_than => 20
       end
     end
+
+  def self.search(search)
+    if search 
+      where(["name LIKE ?","%#{search}%"])
+    else
+      all
+    end
+  end
 end
