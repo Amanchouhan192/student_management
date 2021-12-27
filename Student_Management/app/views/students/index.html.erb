@@ -4,6 +4,10 @@
 <%= link_to("See All Departments ",'/departments') %>
 <h1>Student</h1>
 
+ <%= form_tag @student, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "search" %> 
+ <% end %>
 <table>
   <thead>
    <tr>
