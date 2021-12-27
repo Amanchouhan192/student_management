@@ -1,9 +1,15 @@
 <br />
 <div>
    <br  />
-   <h>Students Ragistration Form</h>
-   <br />
+   <h>Students Ragistration Form</h><br />
+   <%= link_to 'New Department', new_department_path %> |
+   <%= link_to("See Student Data ",'/students') %><br />
    <%= form_for @student do |f| %>
+   <div>
+      <% if @student.errors.any? %>
+      <%= render partial: "shared/error_msg" %>
+      <% end %>
+   </div>
    <div>
       <%= f.label :name %> <%= f.text_field :name , placeholder: "Employee Name" %>
    </div>
