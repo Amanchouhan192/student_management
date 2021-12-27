@@ -1,5 +1,6 @@
 class Student < ApplicationRecord
 	belongs_to :department
+	
 	validates :name, :age, presence: true 
 	validates :age, numericality: { message: "%{value} seems wrong must be an positive integer" }
     
