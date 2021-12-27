@@ -1,0 +1,8 @@
+<div class="red">
+    <h2><%= pluralize(@department.errors.count, "error") %> prohibited this Department from being saved:</h2>
+    <ul>
+    <% @department.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+</div>
