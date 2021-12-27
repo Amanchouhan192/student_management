@@ -11,6 +11,10 @@ class DepartmentsController < ApplicationController
     @department  = Department.find(params[:id])
   end
 
+  def edit
+    
+  end
+
   def create
     @department = Department.new(department_params)
     if @department.save
