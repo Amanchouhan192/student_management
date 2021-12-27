@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   def index
     #@students  = Student.all
-    @students = Student.where(["name LIKE ?","%#{params[:search]}%"])
+    @students = Student.search(params[:search])
   end
 
   def new
