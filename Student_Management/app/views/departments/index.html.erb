@@ -21,7 +21,8 @@
         <td class="table_data"><%= department.name %><td> 
         <td><%#= link_to 'Show', department %></td>
         <td><%= link_to 'Edit', edit_department_path(department) %></td>
-        <td><%= link_to 'Destroy', department %></td>
+        <td><%#= link_to 'Destroy', delete_department_path(department) %></td>
+        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
