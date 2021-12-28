@@ -1,31 +1,34 @@
 <br />
-<div>
+<div class="form_body">
    <br  />
-   <h>Students Ragistration Form</h><br />
+   <h class="heading">Students Ragistration Form</h><br />
+   <div class="links">
    <%= link_to 'New Department', new_department_path %> |
    <%= link_to("See Student Data ",'/students') %><br />
-
+   </div>
+   <div class="form">
    <%= form_for @student do |f| %>
-   <div>
+   <div class="form-control">
       <% if @student.errors.any? %>
       <%= render partial: "shared/error_msg" %>
       <% end %>
    </div>
-   <div>
+   <div class="form-control"> 
       <%= f.label :name %> <%= f.text_field :name , placeholder: "Employee Name" %>
    </div>
-   <div>
+   <div class="form-control">
       <%= f.label :age %> <%= f.text_field :age , placeholder: "Age" %>
    </div>
-   <div>
+   <div class="form-control">
       <%= f.label :marks %> <%= f.text_field :marks , placeholder:"Marks" %>
    </div>
-   <div>
+   <div class="form-control">
       <%= f.label :department_id %>
-      <%= f.select :department_id , [['select'], Department.order(:id).ids.map {|i| [Department.find(i).name,i]}].flatten(1) %> 
+      <%= f.select :department_id , @departments.collect{|d| [d.name, d.id]} %> 
    </div>
-   <div>
+   <div class="form-control" >
       <%= f.submit "Ragister" %>
    </div>
    <% end %>
+   </div>
 </div>
